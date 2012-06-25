@@ -18,10 +18,10 @@ def getapod(feedurl, apodroot, picpath):
 	apodurl = apodroot + apodhtml
 	try:
 		soup = BeautifulSoup(urlopen(apodurl))
-	except: URLError, e
-		if hasattr(e, 'reason')
+	except URLError, e:
+		if hasattr(e, 'reason'):
 			print "We can't reach the server. Reason: " + e.reason
-		elif hasattr(e, 'code'')
+		elif hasattr(e, 'code'):
 			print "There's a problem. Site says " + e.code
 	else:		
 		apodsrc = soup.img['src']
